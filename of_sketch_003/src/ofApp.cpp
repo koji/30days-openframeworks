@@ -2,10 +2,10 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    wWidth = ofGetWidth();
-    wHeight = ofGetHeight();
-    image.load("itp.jpg");
-
+    ofSetWindowShape(600, 600);
+    ofBackground(0, 0, 0);
+    ofSetFrameRate(5);
+    
 }
 
 //--------------------------------------------------------------
@@ -15,10 +15,14 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    image.draw(ofGetMouseX(), ofGetMouseY(), 480, 270 );
-    // text
-    ofSetColor(255, 10, 255);
-    ofDrawBitmapString("hello world", 300, 300);
+    //ofSetHexColor(0x0cb0b6);
+    ofSetColor(int(ofRandom(255)), int(ofRandom(255)), int(ofRandom(255)));
+    ofSetPolyMode(OF_POLY_WINDING_ODD);
+    ofBeginShape();
+    for (int i = 0; i <20; i++){
+        ofVertex(ofRandom(0,ofGetWidth()), ofRandom(0,ofGetHeight()));
+    }
+    ofEndShape();
 
 }
 

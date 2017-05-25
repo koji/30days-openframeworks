@@ -5,7 +5,7 @@ Drawing Primitives
 #### Line
 ```cpp
 ofSetLineWidth(5);
-ofLine(x1, y1, x2, y2);
+ofDrawLine(x1, y1, x2, y2);
 ```
 
 ```java
@@ -32,8 +32,8 @@ triangle(x1, y1, x2, y2, x3, y3);
 ```
 
 #### Circle
-``cpp
-ofCircle(x, y, r);
+```cpp
+ofDrawCircle(x, y, r);
 ```
 
 ```java
@@ -41,7 +41,7 @@ ellipse(x, y, r);
 ```
 
 #### fill & nofill
-``cpp
+```cpp
 ofFill(r, g, b, alpha);
 ofNoFill();
 ```
@@ -50,7 +50,6 @@ ofNoFill();
 fill(r, g, b, alpha);
 noFill();
 ```
-
 
 
 ```cpp

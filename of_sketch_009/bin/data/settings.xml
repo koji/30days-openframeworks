@@ -1,0 +1,13 @@
+<group>
+	<countX>200</countX>
+	<stepX>30</stepX>
+	<twistX>-31.95</twistX>
+	<countY>50</countY>
+	<stepY>200</stepY>
+	<twistY>-18.6</twistY>
+	<pinchY>1</pinchY>
+	<group/>
+	<Scale>0.596939</Scale>
+	<Rotate>180</Rotate>
+	<Background>0</Background>
+</group>

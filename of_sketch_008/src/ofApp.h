@@ -22,15 +22,18 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-    void stripPattern();
-    ofxPanel gui;
-    ofxIntSlider countX;
-    ofxFloatSlider stepX;
-    ofxFloatSlider twistX;
-    
-    ofxGuiGroup globalGroup;
-    ofxFloatSlider Scale;
-    ofxFloatSlider Rotate;
-    ofxFloatSlider Background;
+		
+		void stripPattern();
+		ofxPanel gui;
+		ofxIntSlider countX;
+		ofxFloatSlider stepX;
+		ofxFloatSlider twistX;
+		
+		ofxGuiGroup globalGroup;
+		ofxFloatSlider Scale;
+		ofxFloatSlider Rotate;
+		ofxFloatSlider Background;
+		
+		bool showGui;
 		
 };

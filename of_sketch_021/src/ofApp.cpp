@@ -2,13 +2,20 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    x=0.1;
+    y=0.1;
+    //a=1.25;
+    //b=0.75;
+    ofBackground(0);
+    //ofSetBackgroundAuto(false);
     gui.setup();
-    gui.add(bColor.setup("background", 0, 0, 255));
-    gui.add(color.setup("color", ofColor(255, 15, 30), ofColor(0, 0), ofColor(255, 255)));
-//    gui.add(speed.setup("speed",0.01, 0, 1));
-    gui.add(sx.setup("x",15, 0, 50));
-    gui.add(sy.setup("y",10, 0, 50));
-
+    //gui.add(x.setup("x", 0.1, 0, 2));
+    //gui.add(y.setup("y", 0.1, 0, 2));
+    gui.add(a.setup("a", 1.25, -2, 2));
+    gui.add(b.setup("b", 0.75, -2, 2));
+    gui.add(c.setup("color", ofColor(255, 15, 30), ofColor(0, 0), ofColor(255, 255)));
+    //ofSetColor(255,15,30);
+    //ofSetColor(124, 155, 255,50);
 }
 
 //--------------------------------------------------------------
@@ -18,43 +25,39 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    //gui.draw();
-    ofBackground(bColor);
-//    float xstart = ofRandom(15);
-//    float ynoise = ofRandom(15);
-    float xstart = sx;
-    float ynoise = sy;
-    float oheight = ofGetHeight();
-    float owidth = ofGetWidth();
-    int divider = 15;
-    ofTranslate(owidth/2, oheight/2, 0);
-    
-    for(float y=-(oheight/divider); y<=(oheight/divider); y+=1.5) {
-        ynoise+=0.02;
-        float xnoise = xstart;
-        for(float x=-(owidth/divider); x<=(owidth/divider); x+=1.5) {
-            xnoise += 0.03;
-            drawPoint(x,y,ofNoise(xnoise, ynoise));
-        }
-    }
-    theta += speed;
-    ofTranslate(-owidth/2, -oheight/2, 0);
     gui.draw();
+    ofTranslate(0, -ofGetHeight()/2);
+    drawPoint();
+
 }
 
-//--------------------------------------------------------------
-void ofApp::drawPoint(float x, float y, float noiseFactor) {
-    ofPushMatrix();
-    ofTranslate(x*noiseFactor*4, y*noiseFactor*4, -y);
-    float edgeSize = noiseFactor * 16;
-    ofSetColor(color);
-    ofDrawLine(0,0,x,y);
-    ofPopMatrix();
+void ofApp::drawPoint() {
+    float px, py;
     
+    for (int i = 0; i < 1000; i++) {
+        
+        px = (1 + a * b) * x - b * x * y;
+        py = (1 - b) * y + b * x * x;
+        float posx = px* 100 + ofGetWidth()*0.5;
+        float posy = py* 100 + ofGetHeight()*0.75;
+        
+        ofSetColor(c);
+        //ofPoint(posx, posy);
+        ofDrawCircle(posx, posy, 1, 1);
+        x = px;
+        y = py;
+    }
 }
+
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
+    if(key=='a') {
+        ofBackground(0);
+    }
+    if(key=='d'){
+        drawPoint();
+    }
 
 }
 

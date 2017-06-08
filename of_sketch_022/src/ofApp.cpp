@@ -3,6 +3,7 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     ofSetBackgroundAuto(false);
+    glEnable(GL_BLEND);
     ofBackground(0);
     xoff = 0.0;
     theta = 0.0;

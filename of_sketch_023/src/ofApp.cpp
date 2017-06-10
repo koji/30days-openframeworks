@@ -4,9 +4,9 @@
 void ofApp::setup(){
 
     ofBackground(255);
-    image.load("s.png");
+    image.load("l.png");
     gui.setup();
-    gui.add(skip.setup("skip", 12, 1, 20));
+    gui.add(skip.setup("skip", 50, 1, 50));
 }
 
 //--------------------------------------------------------------

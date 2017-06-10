@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "Particle.hpp"
+#include "ofxGui.h"
 
 #define num 500
 
@@ -27,4 +28,9 @@ class ofApp : public ofBaseApp{
 //    Particle p1, p2;
     Particle particles[num];
     float a,aa;
+    
+    ofxPanel gui;
+    ofxIntSlider r;
+    ofxIntSlider g;
+    ofxIntSlider b;
 };

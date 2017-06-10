@@ -10,5 +10,17 @@
 #define Particle_hpp
 
 #include <stdio.h>
+#include "ofMain.h"
+
+class Particle {
+public:
+    float radius, maxSpeed, maxDistance;
+    ofVec2f velocity, acceleration, position;
+    
+    void init();
+    void move();
+    void render();
+    
+};
 
 #endif /* Particle_hpp */

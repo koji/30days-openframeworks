@@ -10,6 +10,10 @@ void ofApp::setup(){
 //    p2.init(300,40, 3.0);
     for (int i = 0; i < num; i ++) particles[i].init(i*10, ofRandom(5, 30), ofRandom(1,5),ofRandom(1,5));
     
+    gui.setup();
+    gui.add(r.setup("r", 0, 0,255));
+    gui.add(g.setup("g", 0, 50, 255));
+    gui.add(b.setup("b", 0, 100,255));
 
 }
 
@@ -28,13 +32,17 @@ void ofApp::draw(){
     
 //    p1.render();
 //    p2.render();
-    float r = 255*abs(sin(aa));
-    float g = 255*abs(sin(a));
-    float b = 255*abs(cos(a));
+//    float r = 255*abs(sin(aa));
+//    float g = 255*abs(sin(a));
+//    float b = 255*abs(cos(a));
+//    int r = r;
+//    int g = g;
+//    int b = b;
     ofSetColor(r, g, b);
     for (int i = 0; i < num; i ++) {
         particles[i].render();
     }
+    gui.draw();
 
 }
 

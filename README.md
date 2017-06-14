@@ -51,11 +51,13 @@ fill(r, g, b, alpha);
 noFill();
 ```
 
-
+#### dot
 ```cpp
+ofPoint(x, y);
 ```
 
 ```java
+dot(x, y);
 ```
 
 ```cpp
